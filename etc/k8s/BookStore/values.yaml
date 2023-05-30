@@ -1,0 +1,376 @@
+# auth-server sub-chart override
+authserver:
+  config:
+    selfUrl: https://bookstore-st-authserver
+    corsOrigins: http://bookstore-st-angular,https://bookstore-st-angular,https://bookstore-st-gateway-web,https://bookstore-st-gateway-web-public,https://bookstore-st-identity,https://bookstore-st-administration,https://bookstore-st-saas,https://bookstore-st-product
+    allowedRedirectUrls: http://bookstore-st-angular,https://bookstore-st-angular,http://bookstore-st-blazor,https://bookstore-st-blazor
+    disablePii: "false"
+    identityService:
+      connString: "Server=bookstore-st-sqldb,1433;Database=BookStore_Identity;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    administrationService:
+      connString: "Server=bookstore-st-sqldb,1433;Database=BookStore_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    saasService:
+      connString: "Server=bookstore-st-sqldb,1433;Database=BookStore_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    authServer:
+      authority: http://bookstore-st-authserver
+      requireHttpsMetadata: "false"
+      swaggerClientId: WebGateway_Swagger
+    dotnetEnv: Staging
+    redisHost: bookstore-st-redis
+    rabbitmqHost: bookstore-st-rabbitmq
+    elasticsearchUrl: http://bookstore-st-elasticsearch
+  ingress:
+    host: bookstore-st-authserver
+  image:
+    repository: acme/bookstore-app-authserver
+    tag: latest
+
+# identity-service sub-chart override
+identity:
+  config:
+    selfUrl: https://bookstore-st-identity
+    corsOrigins: https://bookstore-st-gateway-web
+    connectionStrings:
+      identityService: "Server=bookstore-st-sqldb,1433;Database=BookStore_Identity;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      administrationService: "Server=bookstore-st-sqldb,1433;Database=BookStore_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=bookstore-st-sqldb,1433;Database=BookStore_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    authServer:
+      authority: http://bookstore-st-authserver
+      requireHttpsMetadata: "false"
+    dotnetEnv: Staging
+    redisHost: bookstore-st-redis
+    rabbitmqHost: bookstore-st-rabbitmq
+    elasticsearchUrl: http://bookstore-st-elasticsearch
+  openIdDict: #Seed applications and resources
+    applications:
+      authServerRootUrl: https://bookstore-st-authserver/
+      angularRootUrl: https://bookstore-st-angular/
+      webRootUrl: https://bookstore-st-web/
+      blazorRootUrl: https://bookstore-st-blazor/
+      blazorServerRootUrl: https://bookstore-st-blazor-server/
+      publicWebRootUrl: https://bookstore-st-public-web/
+      webGatewayRootUrl: https://bookstore-st-gateway-web/
+      publicWebGatewayRootUrl: https://bookstore-st-gateway-web-public/ 
+    resources:  
+      accountServiceRootUrl: https://bookstore-st-authserver/
+      administrationServiceRootUrl: https://bookstore-st-administration/
+      identityServiceRootUrl: https://bookstore-st-identity/
+      saasServiceRootUrl: https://bookstore-st-saas/
+      productServiceRootUrl: https://bookstore-st-product/
+  ingress:
+    host: bookstore-st-identity
+  image:
+    repository: acme/bookstore-service-identity
+    tag: latest
+
+# administration-service sub-chart override
+administration:
+  config:
+    selfUrl: https://bookstore-st-administration
+    corsOrigins: https://bookstore-st-gateway-web,https://bookstore-st-gateway-web-public
+    connectionStrings:
+      administrationService: "Server=bookstore-st-sqldb,1433;Database=BookStore_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=bookstore-st-sqldb,1433;Database=BookStore_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"    
+    authServer:
+      authority: http://bookstore-st-authserver
+      requireHttpsMetadata: "false"
+      swaggerClientId: WebGateway_Swagger
+    remoteServices:
+      abpIdentityBaseUrl: https://bookstore-st-identity
+      useCurrentToken: "false"   
+    dotnetEnv: Staging
+    redisHost: bookstore-st-redis
+    rabbitmqHost: bookstore-st-rabbitmq
+    elasticsearchUrl: http://bookstore-st-elasticsearch
+  synchedCommunication: # Used for server-to-server (client-credentials) communication with identityService for user permissions
+    authority: https://bookstore-st-authserver
+  ingress:
+    host: bookstore-st-administration
+  image:
+    repository: acme/bookstore-service-administration
+    tag: latest
+
+# saas-service sub-chart override
+saas:
+  config:
+    selfUrl: https://bookstore-st-saas
+    corsOrigins: https://bookstore-st-gateway-web
+    connectionStrings:
+      administrationService: "Server=bookstore-st-sqldb,1433;Database=BookStore_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=bookstore-st-sqldb,1433;Database=BookStore_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    authServer:
+      authority: http://bookstore-st-authserver
+      requireHttpsMetadata: "false"
+      swaggerClientId: WebGateway_Swagger
+    dotnetEnv: Staging
+    redisHost: bookstore-st-redis
+    rabbitmqHost: bookstore-st-rabbitmq
+    elasticsearchUrl: http://bookstore-st-elasticsearch
+  ingress:
+    host: bookstore-st-saas
+  image:
+    repository: acme/bookstore-service-saas
+    tag: latest  
+
+# product-service sub-chart override
+product:
+  config:
+    selfUrl: https://bookstore-st-product
+    corsOrigins: https://bookstore-st-gateway-web,https://bookstore-st-gateway-web-public
+    connectionStrings:
+      productService: "Server=bookstore-st-sqldb,1433;Database=BookStore_ProductService;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      administrationService: "Server=bookstore-st-sqldb,1433;Database=BookStore_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=bookstore-st-sqldb,1433;Database=BookStore_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    authServer:
+      authority: http://bookstore-st-authserver
+      requireHttpsMetadata: "false"
+      swaggerClientId: WebGateway_Swagger
+    dotnetEnv: Staging
+    redisHost: bookstore-st-redis
+    rabbitmqHost: bookstore-st-rabbitmq
+    elasticsearchUrl: http://bookstore-st-elasticsearch
+  ingress:
+    host: bookstore-st-product
+  image:
+    repository: acme/bookstore-service-product
+    tag: latest
+
+# gateway-web sub-chart override
+gateway-web:
+  config:
+    selfUrl: https://bookstore-st-gateway-web
+    corsOrigins: https://bookstore-st-angular,https://bookstore-st-blazor
+    globalConfigurationBaseUrl: http://bookstore-st-gateway-web
+    authServer:
+      authority: http://bookstore-st-authserver
+      requireHttpsMetadata: "false"
+      swaggerClientId: WebGateway_Swagger
+    dotnetEnv: Staging
+    redisHost: bookstore-st-redis
+    rabbitmqHost: bookstore-st-rabbitmq
+    elasticsearchUrl: http://bookstore-st-elasticsearch
+  reRoutes:
+    accountService:
+      schema: http
+      host: bookstore-st-authserver
+      port: 80
+    identityService:
+      schema: http
+      host: bookstore-st-identity
+      port: 80
+    administrationService:
+      schema: http
+      host: bookstore-st-administration
+      port: 80
+    saasService:
+      schema: http
+      host: bookstore-st-saas
+      port: 80
+    productService:
+      schema: http
+      host: bookstore-st-product
+      port: 80  
+  ingress:
+    host: bookstore-st-gateway-web
+  image:
+    repository: acme/bookstore-gateway-web
+    tag: latest
+    pullPolicy: IfNotPresent
+
+# gateway-web-public sub-chart override
+gateway-web-public:
+  config:
+    selfUrl: https://bookstore-st-gateway-web-public
+    globalConfigurationBaseUrl: http://bookstore-st-gateway-web-public
+    authServer:
+      authority: http://bookstore-st-authserver
+      requireHttpsMetadata: "false"
+      swaggerClientId: WebGateway_Swagger
+      swaggerClientSecret: "1q2w3e*"
+    dotnetEnv: Staging 
+    redisHost: bookstore-st-redis
+    rabbitmqHost: bookstore-st-rabbitmq
+    elasticsearchUrl: http://bookstore-st-elasticsearch
+  reRoutes:
+    accountService:
+      schema: http
+      host: bookstore-st-authserver
+      port: 80
+    saasService:
+      schema: http
+      host: bookstore-st-saas
+      port: 80
+    administrationService:
+      schema: http
+      host: bookstore-st-administration
+      port: 80
+    productService:
+      schema: http
+      host: bookstore-st-product
+      port: 80  
+  ingress:
+    host: bookstore-st-gateway-web-public
+    tlsSecret: bookstore-tls
+  image:
+    repository: acme/bookstore-gateway-web-public
+    tag: latest
+    pullPolicy: IfNotPresent
+
+kibana:
+  config:
+    elasticsearchUrl: http://bookstore-st-elasticsearch:9200
+
+# dbmigrator sub-chart override
+dbmigrator:
+  config:
+    connectionStrings:
+      identityService: "Server=bookstore-st-sqldb,1433;Database=BookStore_Identity;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      administrationService: "Server=bookstore-st-sqldb,1433;Database=BookStore_Administration;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      saasService: "Server=bookstore-st-sqldb,1433;Database=BookStore_Saas;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+      productService: "Server=bookstore-st-sqldb,1433;Database=BookStore_ProductService;User Id=sa;password=myPassw@rd;TrustServerCertificate=True"
+    dotnetEnv: Staging
+  openIdDict:
+    applications:
+      authServerRootUrl: https://bookstore-st-authserver/
+      angularRootUrl: https://bookstore-st-angular/
+      webRootUrl: https://bookstore-st-web/
+      blazorRootUrl: https://bookstore-st-blazor/
+      blazorServerRootUrl: https://bookstore-st-blazor-server/
+      publicWebRootUrl: https://bookstore-st-public-web/
+      webGatewayRootUrl: https://bookstore-st-gateway-web/
+      publicWebGatewayRootUrl: https://bookstore-st-gateway-web-public/ 
+    resources:  
+      accountServiceRootUrl: https://bookstore-st-authserver/
+      administrationServiceRootUrl: https://bookstore-st-administration/
+      identityServiceRootUrl: https://bookstore-st-identity/
+      saasServiceRootUrl: https://bookstore-st-saas/
+      productServiceRootUrl: https://bookstore-st-product/
+  image:
+    repository: acme/bookstore-db-migrator
+    tag: latest
+    pullPolicy: IfNotPresent  
+
+# Public Web application sub-chart override
+publicweb:
+  config:
+    selfUrl: https://bookstore-st-public-web
+    gatewayUrl: http://bookstore-st-gateway-web-public
+    authServer:
+      authority: http://bookstore-st-authserver # should be domain on production (https://auth.mydomain.com)
+      requireHttpsMetadata: "false"
+      isOnK8s: "true"
+      metaAddress: http://bookstore-st-authserver # should be container on production (http://bookstore-az-authserver)
+    dotnetEnv: Staging 
+    redisHost: bookstore-st-redis
+    rabbitmqHost: bookstore-st-rabbitmq
+    elasticsearchUrl: http://bookstore-st-elasticsearch
+  ingress:
+    host: bookstore-st-public-web
+    tlsSecret: bookstore-tls
+  image:
+    repository: acme/bookstore-app-public-web
+    tag: latest
+    pullPolicy: IfNotPresent
+# Web(MVC) back-office application sub-chart override
+web:
+  config:
+    selfUrl: https://bookstore-st-web
+    gatewayUrl: http://bookstore-st-gateway-web
+    authServer:
+      authority: http://bookstore-st-authserver # should be domain on production (https://auth.mydomain.com)
+      requireHttpsMetadata: "false"
+      isOnK8s: "true"
+      metaAddress: http://bookstore-st-authserver # should be container on production (http://bookstore-az-authserver)
+    dotnetEnv: Staging 
+    redisHost: bookstore-st-redis
+    rabbitmqHost: bookstore-st-rabbitmq
+    elasticsearchUrl: http://bookstore-st-elasticsearch
+  ingress:
+    host: bookstore-st-web
+    tlsSecret: bookstore-tls
+  image:
+    repository: acme/bookstore-app-web
+    tag: latest
+    pullPolicy: IfNotPresent
+# Default values for BookStore.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

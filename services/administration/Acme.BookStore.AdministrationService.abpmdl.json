@@ -1,0 +1,58 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "Acme.BookStore.AdministrationService.HttpApi": {
+      "path": "src/Acme.BookStore.AdministrationService.HttpApi/Acme.BookStore.AdministrationService.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.AdministrationService.Application.Contracts": {
+      "path": "src/Acme.BookStore.AdministrationService.Application.Contracts/Acme.BookStore.AdministrationService.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.AdministrationService.Application": {
+      "path": "src/Acme.BookStore.AdministrationService.Application/Acme.BookStore.AdministrationService.Application.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.AdministrationService.Domain.Shared": {
+      "path": "src/Acme.BookStore.AdministrationService.Domain.Shared/Acme.BookStore.AdministrationService.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.AdministrationService.Domain": {
+      "path": "src/Acme.BookStore.AdministrationService.Domain/Acme.BookStore.AdministrationService.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.AdministrationService.EntityFrameworkCore": {
+      "path": "src/Acme.BookStore.AdministrationService.EntityFrameworkCore/Acme.BookStore.AdministrationService.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.AdministrationService.HttpApi.Client": {
+      "path": "src/Acme.BookStore.AdministrationService.HttpApi.Client/Acme.BookStore.AdministrationService.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.AdministrationService.HttpApi.Host": {
+      "path": "src/Acme.BookStore.AdministrationService.HttpApi.Host/Acme.BookStore.AdministrationService.HttpApi.Host.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.AdministrationService.TestBase": {
+      "path": "test/Acme.BookStore.AdministrationService.TestBase/Acme.BookStore.AdministrationService.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "Acme.BookStore.AdministrationService.Domain.Tests": {
+      "path": "test/Acme.BookStore.AdministrationService.Domain.Tests/Acme.BookStore.AdministrationService.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Acme.BookStore.AdministrationService.EntityFrameworkCore.Tests": {
+      "path": "test/Acme.BookStore.AdministrationService.EntityFrameworkCore.Tests/Acme.BookStore.AdministrationService.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Acme.BookStore.AdministrationService.Application.Tests": {
+      "path": "test/Acme.BookStore.AdministrationService.Application.Tests/Acme.BookStore.AdministrationService.Application.Tests.abppkg.json",
+      "folder": "test"
+    }
+  }
+}

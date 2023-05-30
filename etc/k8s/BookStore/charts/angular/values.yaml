@@ -1,0 +1,20 @@
+config:
+  selfUrl: # 
+  gatewayUrl: # 
+  authServer:
+      authority: # http://bookstore-st-authserver
+      requireHttpsMetadata: # false
+      responseType: "code"
+      strictDiscoveryDocumentValidation: false
+      skipIssuerCheck: true
+
+ingress:
+  host: # bookstore-st-angular
+  tlsSecret: bookstore-tls
+
+image:
+  repository: acme/bookstore-app-angular
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}

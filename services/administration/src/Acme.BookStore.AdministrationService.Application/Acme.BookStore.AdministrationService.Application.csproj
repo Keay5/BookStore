@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Acme.BookStore.AdministrationService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.AuditLogging.Application" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.LanguageManagement.Application" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.TextTemplateManagement.Application" Version="7.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Acme.BookStore.AdministrationService.Application.Contracts\Acme.BookStore.AdministrationService.Application.Contracts.csproj" />
+        <ProjectReference Include="..\Acme.BookStore.AdministrationService.Domain\Acme.BookStore.AdministrationService.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

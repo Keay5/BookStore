@@ -1,0 +1,58 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "Acme.BookStore.SaasService.HttpApi": {
+      "path": "src/Acme.BookStore.SaasService.HttpApi/Acme.BookStore.SaasService.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.SaasService.Application.Contracts": {
+      "path": "src/Acme.BookStore.SaasService.Application.Contracts/Acme.BookStore.SaasService.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.SaasService.Application": {
+      "path": "src/Acme.BookStore.SaasService.Application/Acme.BookStore.SaasService.Application.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.SaasService.Domain.Shared": {
+      "path": "src/Acme.BookStore.SaasService.Domain.Shared/Acme.BookStore.SaasService.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.SaasService.Domain": {
+      "path": "src/Acme.BookStore.SaasService.Domain/Acme.BookStore.SaasService.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.SaasService.EntityFrameworkCore": {
+      "path": "src/Acme.BookStore.SaasService.EntityFrameworkCore/Acme.BookStore.SaasService.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.SaasService.HttpApi.Client": {
+      "path": "src/Acme.BookStore.SaasService.HttpApi.Client/Acme.BookStore.SaasService.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.SaasService.HttpApi.Host": {
+      "path": "src/Acme.BookStore.SaasService.HttpApi.Host/Acme.BookStore.SaasService.HttpApi.Host.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.SaasService.TestBase": {
+      "path": "test/Acme.BookStore.SaasService.TestBase/Acme.BookStore.SaasService.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "Acme.BookStore.SaasService.Domain.Tests": {
+      "path": "test/Acme.BookStore.SaasService.Domain.Tests/Acme.BookStore.SaasService.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Acme.BookStore.SaasService.EntityFrameworkCore.Tests": {
+      "path": "test/Acme.BookStore.SaasService.EntityFrameworkCore.Tests/Acme.BookStore.SaasService.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Acme.BookStore.MicroserviceName.Application.Tests": {
+      "path": "test/Acme.BookStore.SaasService.Application.Tests/Acme.BookStore.SaasService.Application.Tests.abppkg.json",
+      "folder": "test"
+    }
+  }
+}

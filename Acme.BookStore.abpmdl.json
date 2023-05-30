@@ -1,0 +1,131 @@
+{
+  "folders": {
+    "items": {
+      "services": {
+        "items": {
+          "administration": {
+            "items": {
+              "src": {}
+            }
+          },
+          "identity": {
+            "items": {
+              "src": {}
+            }
+          },
+          "product": {
+            "items": {
+              "src": {}
+            }
+          },
+          "saas": {
+            "items": {
+              "src": {}
+            }
+          }
+        }
+      },
+      "gateways": {
+        "items": {
+          "web": {
+            "items": {
+              "src": {}
+            }
+          },
+          "web-public": {
+            "items": {
+              "src": {}
+            }
+          }
+        }
+      },
+      "apps": {
+        "items": {
+          "auth-server": {
+            "items": {
+              "src": {}
+            }
+          },
+          "blazor": {
+            "items": {
+              "src": {}
+            }
+          },
+          "public-web": {
+            "items": {
+              "src": {}
+            }
+          },
+          "web": {
+            "items": {
+              "src": {}
+            }
+          }
+        }
+      },
+      "shared": {}
+    }
+  },
+  "packages": {
+    "Acme.BookStore.AdministrationService.HttpApi.Host": {
+      "path": "services/administration/src/Acme.BookStore.AdministrationService.HttpApi.Host/Acme.BookStore.AdministrationService.HttpApi.Host.abppkg.json",
+      "folder": "services/administration/src"
+    },
+    "Acme.BookStore.IdentityService.HttpApi.Host": {
+      "path": "services/identity/src/Acme.BookStore.IdentityService.HttpApi.Host/Acme.BookStore.IdentityService.HttpApi.Host.abppkg.json",
+      "folder": "services/identity/src"
+    },
+    "Acme.BookStore.ProductService.HttpApi.Host": {
+      "path": "services/product/src/Acme.BookStore.ProductService.HttpApi.Host/Acme.BookStore.ProductService.HttpApi.Host.abppkg.json",
+      "folder": "services/product/src"
+    },
+    "Acme.BookStore.SaasService.HttpApi.Host": {
+      "path": "services/saas/src/Acme.BookStore.SaasService.HttpApi.Host/Acme.BookStore.SaasService.HttpApi.Host.abppkg.json",
+      "folder": "services/saas/src"
+    },
+    "Acme.BookStore.WebGateway": {
+      "path": "gateways/web/src/Acme.BookStore.WebGateway/Acme.BookStore.WebGateway.abppkg.json",
+      "folder": "gateways/web/src"
+    },
+    "Acme.BookStore.PublicWebGateway": {
+      "path": "gateways/web-public/src/Acme.BookStore.PublicWebGateway/Acme.BookStore.PublicWebGateway.abppkg.json",
+      "folder": "gateways/web-public/src"
+    },
+    "Acme.BookStore.AuthServer": {
+      "path": "apps/auth-server/src/Acme.BookStore.AuthServer/Acme.BookStore.AuthServer.abppkg.json",
+      "folder": "apps/auth-server/src"
+    },
+    "Acme.BookStore.PublicWeb": {
+      "path": "apps/public-web/src/Acme.BookStore.PublicWeb/Acme.BookStore.PublicWeb.abppkg.json",
+      "folder": "apps/public-web/src"
+    },
+    "Acme.BookStore.Web": {
+      "path": "apps/web/src/Acme.BookStore.Web/Acme.BookStore.Web.abppkg.json",
+      "folder": "apps/web/src"
+    },
+    "Acme.BookStore.DbMigrator": {
+      "path": "shared/Acme.BookStore.DbMigrator/Acme.BookStore.DbMigrator.abppkg.json",
+      "folder": "shared"
+    },
+    "Acme.BookStore.Shared.Hosting.AspNetCore": {
+      "path": "shared/Acme.BookStore.Shared.Hosting.AspNetCore/Acme.BookStore.Shared.Hosting.AspNetCore.abppkg.json",
+      "folder": "shared"
+    },
+    "Acme.BookStore.Shared.Hosting.Microservices": {
+      "path": "shared/Acme.BookStore.Shared.Hosting.Microservices/Acme.BookStore.Shared.Hosting.Microservices.abppkg.json",
+      "folder": "shared"
+    },
+    "Acme.BookStore.Shared.Localization": {
+      "path": "shared/Acme.BookStore.Shared.Localization/Acme.BookStore.Shared.Localization.abppkg.json",
+      "folder": "shared"
+    },
+    "Acme.BookStore.Shared.Hosting.Gateways": {
+      "path": "shared/Acme.BookStore.Shared.Hosting.Gateways/Acme.BookStore.Shared.Hosting.Gateways.abppkg.json",
+      "folder": "shared"
+    },
+    "Acme.BookStore.Shared.Hosting": {
+      "path": "shared/Acme.BookStore.Shared.Hosting/Acme.BookStore.Shared.Hosting.abppkg.json",
+      "folder": "shared"
+    }
+  }
+}

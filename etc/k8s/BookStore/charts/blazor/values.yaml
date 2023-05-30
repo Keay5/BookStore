@@ -1,0 +1,17 @@
+config:
+  selfUrl: # 
+  gatewayUrl: # 
+  authServer:
+      authority: # http://bookstore-st-authserver
+      responseType: "code"
+
+ingress:
+  host: # bookstore-st-blazor
+  tlsSecret: bookstore-tls
+
+image:
+  repository: acme/bookstore-app-blazor
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}

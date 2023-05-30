@@ -1,0 +1,62 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "Acme.BookStore.ProductService.Domain.Shared": {
+      "path": "src/Acme.BookStore.ProductService.Domain.Shared/Acme.BookStore.ProductService.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.ProductService.Domain": {
+      "path": "src/Acme.BookStore.ProductService.Domain/Acme.BookStore.ProductService.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.ProductService.Application.Contracts": {
+      "path": "src/Acme.BookStore.ProductService.Application.Contracts/Acme.BookStore.ProductService.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.ProductService.Application": {
+      "path": "src/Acme.BookStore.ProductService.Application/Acme.BookStore.ProductService.Application.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.ProductService.EntityFrameworkCore": {
+      "path": "src/Acme.BookStore.ProductService.EntityFrameworkCore/Acme.BookStore.ProductService.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.ProductService.HttpApi": {
+      "path": "src/Acme.BookStore.ProductService.HttpApi/Acme.BookStore.ProductService.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.ProductService.HttpApi.Client": {
+      "path": "src/Acme.BookStore.ProductService.HttpApi.Client/Acme.BookStore.ProductService.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.ProductService.HttpApi.Host": {
+      "path": "src/Acme.BookStore.ProductService.HttpApi.Host/Acme.BookStore.ProductService.HttpApi.Host.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.ProductService.Web": {
+      "path": "src/Acme.BookStore.ProductService.Web/Acme.BookStore.ProductService.Web.abppkg.json",
+      "folder": "src"
+    },
+    "Acme.BookStore.ProductService.Application.Tests": {
+      "path": "test/Acme.BookStore.ProductService.Application.Tests/Acme.BookStore.ProductService.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Acme.BookStore.ProductService.Domain.Tests": {
+      "path": "test/Acme.BookStore.ProductService.Domain.Tests/Acme.BookStore.ProductService.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Acme.BookStore.ProductService.EntityFrameworkCore.Tests": {
+      "path": "test/Acme.BookStore.ProductService.EntityFrameworkCore.Tests/Acme.BookStore.ProductService.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "Acme.BookStore.ProductService.TestBase": {
+      "path": "test/Acme.BookStore.ProductService.TestBase/Acme.BookStore.ProductService.TestBase.abppkg.json",
+      "folder": "test"
+    }
+  }
+}

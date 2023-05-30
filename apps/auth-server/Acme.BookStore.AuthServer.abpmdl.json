@@ -1,0 +1,13 @@
+{
+  "folders": {
+    "items": {
+      "src": {}
+    }
+  },
+  "packages": {
+    "Acme.BookStore.AuthServer": {
+      "path": "src/Acme.BookStore.AuthServer/Acme.BookStore.AuthServer.abppkg.json",
+      "folder": "src"
+    }
+  }
+}

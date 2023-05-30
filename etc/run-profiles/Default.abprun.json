@@ -1,0 +1,54 @@
+{
+  "applications": {
+    "Docker-Dependencies": {
+      "type": "cli",
+      "workingDirectory": "../docker",
+      "startCommand": "./up.ps1",
+      "stopCommand": "./down.ps1"
+    },
+    "Acme.BookStore.AuthServer": {
+      "type": "dotnet-project",
+      "path": "../../apps/auth-server/src/Acme.BookStore.AuthServer/Acme.BookStore.AuthServer.csproj"
+    },
+    "Acme.BookStore.Blazor": {
+      "type": "dotnet-project",
+      "path": "../../apps/blazor/src/Acme.BookStore.Blazor/Acme.BookStore.Blazor.csproj"
+    },
+    "Acme.BookStore.Blazor.Server": {
+      "type": "dotnet-project",
+      "path": "../../apps/blazor/src/Acme.BookStore.Blazor.Server/Acme.BookStore.Blazor.Server.csproj"
+    },
+    "Acme.BookStore.PublicWeb": {
+      "type": "dotnet-project",
+      "path": "../../apps/public-web/src/Acme.BookStore.PublicWeb/Acme.BookStore.PublicWeb.csproj"
+    },
+    "Acme.BookStore.Web": {
+      "type": "dotnet-project",
+      "path": "../../apps/web/src/Acme.BookStore.Web/Acme.BookStore.Web.csproj"
+    },
+    "Acme.BookStore.AdministrationService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "../../services/administration/src/Acme.BookStore.AdministrationService.HttpApi.Host/Acme.BookStore.AdministrationService.HttpApi.Host.csproj"
+    },
+    "Acme.BookStore.IdentityService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "../../services/identity/src/Acme.BookStore.IdentityService.HttpApi.Host/Acme.BookStore.IdentityService.HttpApi.Host.csproj"
+    },
+    "Acme.BookStore.ProductService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "../../services/product/src/Acme.BookStore.ProductService.HttpApi.Host/Acme.BookStore.ProductService.HttpApi.Host.csproj"
+    },
+    "Acme.BookStore.SaasService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "../../services/saas/src/Acme.BookStore.SaasService.HttpApi.Host/Acme.BookStore.SaasService.HttpApi.Host.csproj"
+    },
+    "Acme.BookStore.WebGateway": {
+      "type": "dotnet-project",
+      "path": "../../gateways/web/src/Acme.BookStore.WebGateway/Acme.BookStore.WebGateway.csproj"
+    },
+    "Acme.BookStore.PublicWebGateway": {
+      "type": "dotnet-project",
+      "path": "../../gateways/web-public/src/Acme.BookStore.PublicWebGateway/Acme.BookStore.PublicWebGateway.csproj"
+    }
+  }
+}

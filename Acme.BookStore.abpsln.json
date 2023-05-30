@@ -1,0 +1,59 @@
+{
+  "folders": {
+    "items": {
+      "apps": {},
+      "gateways": {},
+      "services": {}
+    }
+  },
+  "modules": {
+    "Acme.BookStore": {
+      "path": "Acme.BookStore.abpmdl.json"
+    },
+    "Acme.BookStore.AuthServer": {
+      "path": "apps/auth-server/Acme.BookStore.AuthServer.abpmdl.json",
+      "folder": "apps"
+    },
+    "Acme.BookStore.Blazor": {
+      "path": "apps/blazor/Acme.BookStore.Blazor.abpmdl.json",
+      "folder": "apps"
+    },
+    "Acme.BookStore.PublicWeb": {
+      "path": "apps/public-web/Acme.BookStore.PublicWeb.abpmdl.json",
+      "folder": "apps"
+    },
+    "Acme.BookStore.Web": {
+      "path": "apps/web/Acme.BookStore.Web.abpmdl.json",
+      "folder": "apps"
+    },
+    "Acme.BookStore.WebGateway": {
+      "path": "gateways/web/Acme.BookStore.WebGateway.abpmdl.json",
+      "folder": "gateways"
+    },
+    "Acme.BookStore.PublicWebGateway": {
+      "path": "gateways/web-public/Acme.BookStore.PublicWebGateway.abpmdl.json",
+      "folder": "gateways"
+    },
+    "Acme.BookStore.AdministrationService": {
+      "path": "services/administration/Acme.BookStore.AdministrationService.abpmdl.json",
+      "folder": "services"
+    },
+    "Acme.BookStore.IdentityService": {
+      "path": "services/identity/Acme.BookStore.IdentityService.abpmdl.json",
+      "folder": "services"
+    },
+    "Acme.BookStore.ProductService": {
+      "path": "services/product/Acme.BookStore.ProductService.abpmdl.json",
+      "folder": "services"
+    },
+    "Acme.BookStore.SaasService": {
+      "path": "services/saas/Acme.BookStore.SaasService.abpmdl.json",
+      "folder": "services"
+    }
+  },
+  "runProfiles": {
+    "Default": {
+      "path": "etc/run-profiles/Default.abprun.json"
+    }
+  }
+}

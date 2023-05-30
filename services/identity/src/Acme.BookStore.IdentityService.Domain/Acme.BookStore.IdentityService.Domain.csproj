@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Acme.BookStore.IdentityService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.Identity.Pro.Domain" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.OpenIddict.Pro.Domain" Version="7.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Acme.BookStore.IdentityService.Domain.Shared\Acme.BookStore.IdentityService.Domain.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

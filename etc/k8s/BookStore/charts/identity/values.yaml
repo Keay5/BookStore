@@ -1,0 +1,45 @@
+config:
+  selfUrl: # https://bookstore-st-identity
+  corsOrigins: # https://bookstore-st-gateway-web,https://bookstore-st-gateway-public-web
+  connectionStrings:
+    identityService: #
+    administrationService: #
+    saasService: #
+  authServer:
+    authority: # http://bookstore-st-authserver
+    requireHttpsMetadata: # "false"
+    swaggerClientId: WebGateway_Swagger
+  dotnetEnv: Staging
+  redisHost: #
+  rabbitmqHost: #
+  elasticsearchUrl: #
+  stringEncryptionDefaultPassPhrase: gsKnGZ041HLL4IM8
+
+# Seeded applications and resources 
+openIdDict:
+  applications:
+    authServerRootUrl: #
+    angularRootUrl: #
+    webRootUrl: #
+    blazorRootUrl: #
+    blazorServerRootUrl: #
+    publicWebRootUrl: #
+    webGatewayRootUrl: #
+    publicWebGatewayRootUrl: #
+  resources:  
+    accountServiceRootUrl: #
+    administrationServiceRootUrl: #
+    identityServiceRootUrl: #
+    saasServiceRootUrl: #
+    productServiceRootUrl: #
+
+ingress:
+  host: bookstore-st-identity
+  tlsSecret: bookstore-tls
+
+image:
+  repository: acme/bookstore-service-identity
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}

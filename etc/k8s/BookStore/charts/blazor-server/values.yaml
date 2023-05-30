@@ -1,0 +1,24 @@
+config:
+  selfUrl: # 
+  gatewayUrl: # 
+  authServer:
+    authority: # http://bookstore-st-authserver
+    requireHttpsMetadata: # "false"
+    isOnK8s: # "true"
+    metaAddress: # http://bookstore-st-authserver
+  dotnetEnv: # 
+  redisHost: #
+  rabbitmqHost: #
+  elasticsearchUrl: #
+  stringEncryptionDefaultPassPhrase: gsKnGZ041HLL4IM8
+
+ingress:
+  host: # bookstore-st-blazor-server
+  tlsSecret: bookstore-tls
+
+image:
+  repository: acme/bookstore-app-blazor-server
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}   

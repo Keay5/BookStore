@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Acme.BookStore.ProductService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Domain" Version="7.1.1" />
+    <ProjectReference Include="..\Acme.BookStore.ProductService.Domain.Shared\Acme.BookStore.ProductService.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

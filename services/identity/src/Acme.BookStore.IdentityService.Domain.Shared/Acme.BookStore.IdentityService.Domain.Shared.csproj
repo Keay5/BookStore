@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Acme.BookStore.IdentityService</RootNamespace>
+        <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.Identity.Pro.Domain.Shared" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.OpenIddict.Pro.Domain.Shared" Version="7.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="Localization\IdentityService\*.json" />
+        <Content Remove="Localization\IdentityService\*.json" />
+    </ItemGroup>
+
+</Project>

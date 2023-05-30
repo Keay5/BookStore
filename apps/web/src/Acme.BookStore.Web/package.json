@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0",
+  "name": "BookStoreWeb",
+  "private": true,
+  "dependencies": {
+    "@volo/abp.aspnetcore.mvc.ui.theme.leptonx": "~2.1.0",
+    "@volo/identity": "^7.1.1",
+    "@abp/chart.js": "^7.1.1",
+    "@volo/language-management": "^7.1.1"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "version": "0.1.0",
+  "name": "BookStorePublicWeb",
+  "private": true,
+  "dependencies": {
+    "@volo/abp.aspnetcore.mvc.ui.theme.lepton": "^7.1.1"
+  }
+}

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Acme.BookStore.SaasService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Saas.Host.HttpApi.Client" Version="7.1.1" />
+        <PackageReference Include="Volo.Saas.Tenant.HttpApi.Client" Version="7.1.1" />
+        <PackageReference Include="Volo.Payment.Admin.HttpApi.Client" Version="7.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Acme.BookStore.SaasService.Application.Contracts\Acme.BookStore.SaasService.Application.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>

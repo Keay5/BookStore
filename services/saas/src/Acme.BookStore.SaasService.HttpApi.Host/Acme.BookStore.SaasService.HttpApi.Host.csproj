@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <Import Project="..\..\..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Acme.BookStore.SaasService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\..\shared\Acme.BookStore.Shared.Hosting.Microservices\Acme.BookStore.Shared.Hosting.Microservices.csproj" />
+        <ProjectReference Include="..\Acme.BookStore.SaasService.Application\Acme.BookStore.SaasService.Application.csproj" />
+        <ProjectReference Include="..\Acme.BookStore.SaasService.EntityFrameworkCore\Acme.BookStore.SaasService.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\Acme.BookStore.SaasService.HttpApi\Acme.BookStore.SaasService.HttpApi.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Logs\**" />
+        <Content Remove="Logs\**" />
+        <EmbeddedResource Remove="Logs\**" />
+        <None Remove="Logs\**" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <Import Project="..\..\..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Acme.BookStore.AdministrationService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.Http.Client.IdentityModel.Web" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.Identity.Pro.HttpApi.Client" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.Account.Pro.Admin.Application.Contracts" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.Account.Pro.Public.Application.Contracts" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.OpenIddict.Pro.Domain.Shared" Version="7.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\..\shared\Acme.BookStore.Shared.Localization\Acme.BookStore.Shared.Localization.csproj" />
+        <ProjectReference Include="..\..\..\..\shared\Acme.BookStore.Shared.Hosting.Microservices\Acme.BookStore.Shared.Hosting.Microservices.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Acme.BookStore.AdministrationService.Application\Acme.BookStore.AdministrationService.Application.csproj" />
+        <ProjectReference Include="..\Acme.BookStore.AdministrationService.EntityFrameworkCore\Acme.BookStore.AdministrationService.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\Acme.BookStore.AdministrationService.HttpApi\Acme.BookStore.AdministrationService.HttpApi.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Remove="Logs\**" />
+        <Content Remove="Logs\**" />
+        <EmbeddedResource Remove="Logs\**" />
+        <None Remove="Logs\**" />
+    </ItemGroup>
+
+</Project>

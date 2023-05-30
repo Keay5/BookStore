@@ -1,0 +1,44 @@
+config:
+  selfUrl: # https://bookstore-st-gateway-web
+  corsOrigins: # https://bookstore-st-angular
+  globalConfigurationBaseUrl: # http://bookstore-st-gateway-web
+  authServer:
+    authority: # http://bookstore-st-authserver
+    requireHttpsMetadata: # "false"
+    swaggerClientId: # WebGateway_Swagger
+  dotnetEnv: # 
+  redisHost: #
+  rabbitmqHost: #
+  elasticsearchUrl: #
+  
+reRoutes:
+  accountService:
+    schema: # http
+    host: # bookstore-st-authserver
+    port: # 80
+  identityService:
+    schema: # http
+    host: # bookstore-st-identity
+    port: # 80
+  administrationService:
+    schema: # http
+    host: # bookstore-st-administration
+    port: # 80
+  saasService:
+    schema: # http
+    host: # bookstore-st-saas
+    port: # 80
+  productService:
+    schema: # http
+    host: # bookstore-st-saas
+    port: # 80  
+ingress:
+  host: # bookstore-st-gateway-web
+  tlsSecret: bookstore-tls
+
+image:
+  repository: acme/bookstore-gateway-web
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Acme.BookStore.SaasService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.1">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="7.1.1" />
+        <PackageReference Include="Volo.Saas.EntityFrameworkCore" Version="7.1.1" />
+        <PackageReference Include="Volo.Payment.EntityFrameworkCore" Version="7.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Acme.BookStore.SaasService.Domain\Acme.BookStore.SaasService.Domain.csproj" />
+    </ItemGroup>
+
+
+</Project>

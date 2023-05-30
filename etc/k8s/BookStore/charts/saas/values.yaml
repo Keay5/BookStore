@@ -1,0 +1,26 @@
+config:
+  selfUrl: https://bookstore-st-saas
+  corsOrigins: https://bookstore-st-gateway-web,https://bookstore-st-gateway-public-web
+  connectionStrings:
+    administrationService: #
+    saasService: #
+  authServer:
+    authority: # http://bookstore-st-authserver
+    requireHttpsMetadata: # "false"
+    swaggerClientId: WebGateway_Swagger
+  dotnetEnv: Staging
+  redisHost: #
+  rabbitmqHost: #
+  elasticsearchUrl: #
+  stringEncryptionDefaultPassPhrase: gsKnGZ041HLL4IM8
+
+ingress:
+  host: bookstore-st-saas
+  tlsSecret: bookstore-tls
+
+image:
+  repository: acme/bookstore-service-saas
+  tag: latest
+  pullPolicy: IfNotPresent
+
+env: {}      

@@ -1,0 +1,1 @@
+helm upgrade --install bookstore-st bookstore --namespace bookstore --create-namespace

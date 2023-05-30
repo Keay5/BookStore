@@ -1,0 +1,8 @@
+config:
+  elasticsearchUrl: http://bookstore-st-elasticsearch:9200
+
+ingress:
+  host: bookstore-st-kibana
+  tlsSecret: bookstore-tls
+
+

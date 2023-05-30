@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Acme.BookStore.AdministrationService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="7.1.1" />
+    <ProjectReference Include="..\Acme.BookStore.AdministrationService.TestBase\Acme.BookStore.AdministrationService.TestBase.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Acme.BookStore.AdministrationService.EntityFrameworkCore\Acme.BookStore.AdministrationService.EntityFrameworkCore.csproj" />
+  </ItemGroup>
+
+</Project>

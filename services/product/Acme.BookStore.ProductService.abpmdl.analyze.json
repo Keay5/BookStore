@@ -1,0 +1,169 @@
+{
+  "folders": {
+    "src": {},
+    "test": {}
+  },
+  "packages": {
+    "Acme.BookStore.ProductService.Domain.Shared": {
+      "type": "dotnet-project",
+      "path": "src/Acme.BookStore.ProductService.Domain.Shared/Acme.BookStore.ProductService.Domain.Shared.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.domain.shared": {}
+      }      
+    },
+    "Acme.BookStore.ProductService.Domain": {
+      "type": "dotnet-project",
+      "path": "src/Acme.BookStore.ProductService.Domain/Acme.BookStore.ProductService.Domain.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.domain": {}
+      },
+      "contents": {
+        "aggregates": {
+          "Acme.BookStore.ProductService.Products.Product": {
+            "keyType": "Guid",
+            "summary": "Represents a product.",
+            "collectionProperties": {},
+            "navigationProperties": {}
+          } 
+        },
+        "repositoryInterfaces": {
+          "Acme.BookStore.ProductService.Products.IProductRepository": {
+            "entity": {
+              "type": "Acme.BookStore.ProductService.Products.Product",
+              "package": "Acme.BookStore.ProductService.Domain"
+            }
+          }
+        }
+      }
+    },
+    "Acme.BookStore.ProductService.Application.Contracts": {
+      "type": "dotnet-project",
+      "path": "src/Acme.BookStore.ProductService.Application.Contracts/Acme.BookStore.ProductService.Application.Contracts.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.application.contracts": {}
+      }
+    },
+    "Acme.BookStore.ProductService.Application": {
+      "type": "dotnet-project",
+      "path": "src/Acme.BookStore.ProductService.Application/Acme.BookStore.ProductService.Application.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.application": {}
+      },
+      "contents": {
+        "applicationServices": {
+          "Acme.BookStore.ProductService.ProductAppService": {}
+        }
+      }
+    },
+    "Acme.BookStore.ProductService.EntityFrameworkCore": {
+      "type": "dotnet-project",
+      "path": "src/Acme.BookStore.ProductService.EntityFrameworkCore/Acme.BookStore.ProductService.EntityFrameworkCore.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.ef": {}
+      },
+      "contents": {
+        "efDbContexts": {
+          "Acme.BookStore.ProductService.EntityFrameworkCore.ProductServiceDbContext": {
+            "entities": {
+              "Acme.BookStore.ProductService.Products.Product": {
+                "package": "Acme.BookStore.ProductService.Domain",
+                "dbSetPropertyOnDbContext": "Products",
+                "databaseTable": "Products" 
+              }
+            }
+          }
+        }
+      }
+    },
+    "Acme.BookStore.ProductService.HttpApi": {
+      "type": "dotnet-project",
+      "path": "src/Acme.BookStore.ProductService.HttpApi/Acme.BookStore.ProductService.HttpApi.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.http-api": {}
+      },
+      "contents": {
+        "controllers": {
+          "Acme.BookStore.ProductService.Products.ProductController": {},
+          "Acme.BookStore.ProductService.Products.ProductPublicController": {}
+        }
+      }
+    },
+    "Acme.BookStore.ProductService.HttpApi.Client": {
+      "type": "dotnet-project",
+      "path": "src/Acme.BookStore.ProductService.HttpApi.Client/Acme.BookStore.ProductService.HttpApi.Client.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.http-api-client": {}
+      }
+    },
+    "Acme.BookStore.ProductService.Web": {
+      "type": "dotnet-project",
+      "path": "src/Acme.BookStore.ProductService.Web/Acme.BookStore.ProductService.Web.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.ui.mvc": {}
+      },
+      "contents": {
+        "mvcPages": {
+          "Acme.BookStore.ProductService.Web.Pages.Products.Index.cshtml": {},
+          "Acme.BookStore.ProductService.Web.Pages.Products.CreateModal.cshtml": {},
+          "Acme.BookStore.ProductService.Web.Pages.Products.EditModal.cshtml": {}
+        }
+      }
+    },
+    "Acme.BookStore.ProductService.Blazor": {
+      "type": "dotnet-project",
+      "path": "src/Acme.BookStore.ProductService.Blazor/Acme.BookStore.ProductService.Blazor.csproj",
+      "folder": "src",
+      "includes": {
+        "lib.ui.blazor": {}
+      }
+    },
+    "Acme.BookStore.ProductService.HttpApi.Host": {
+      "type": "dotnet-project",
+      "path": "src/Acme.BookStore.ProductService.HttpApi.Host/Acme.BookStore.ProductService.HttpApi.Host.csproj",
+      "folder": "src",
+      "includes": {
+        "host.http-api": {}
+      }
+    },
+    "Acme.BookStore.ProductService.TestBase": {
+      "type": "dotnet-project",
+      "path": "test/Acme.BookStore.ProductService.TestBase/Acme.BookStore.ProductService.TestBase.csproj",
+      "folder": "test",
+      "includes": {
+        "lib.test": {}
+      }
+    },
+    "Acme.BookStore.ProductService.Domain.Tests": {
+      "type": "dotnet-project",
+      "path": "test/Acme.BookStore.ProductService.Domain.Tests/Acme.BookStore.ProductService.Domain.Tests.csproj",
+      "folder": "test",
+      "includes": {
+        "lib.test": {}
+      }
+    },
+    "Acme.BookStore.ProductService.EntityFrameworkCore.Tests": {
+      "type": "dotnet-project",
+      "path": "test/Acme.BookStore.ProductService.EntityFrameworkCore.Tests/Acme.BookStore.ProductService.EntityFrameworkCore.Tests.csproj",
+      "folder": "test",
+      "includes": {
+        "lib.test": {}
+      }
+    },
+    "Acme.BookStore.ProductService.Application.Tests": {
+      "type": "dotnet-project",
+      "path": "test/Acme.BookStore.ProductService.Application.Tests/Acme.BookStore.ProductService.Application.Tests.csproj",
+      "folder": "test",
+      "includes": {
+        "lib.test": {}
+      }
+    }
+  }
+}

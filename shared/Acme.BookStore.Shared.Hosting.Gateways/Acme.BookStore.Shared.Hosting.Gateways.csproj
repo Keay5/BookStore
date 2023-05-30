@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Ocelot" Version="17.0.0" />
+        <PackageReference Include="Ocelot.Provider.Polly" Version="17.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="7.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Acme.BookStore.Shared.Hosting.AspNetCore\Acme.BookStore.Shared.Hosting.AspNetCore.csproj" />
+    </ItemGroup>
+
+</Project>

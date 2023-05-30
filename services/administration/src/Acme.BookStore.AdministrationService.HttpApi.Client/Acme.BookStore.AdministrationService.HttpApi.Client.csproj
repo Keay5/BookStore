@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Acme.BookStore.AdministrationService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.PermissionManagement.HttpApi.Client" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.FeatureManagement.HttpApi.Client" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.SettingManagement.HttpApi.Client" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.AuditLogging.HttpApi.Client" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.LanguageManagement.HttpApi.Client" Version="7.1.1" />
+        <PackageReference Include="Volo.Abp.TextTemplateManagement.HttpApi.Client" Version="7.1.1" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Acme.BookStore.AdministrationService.Application.Contracts\Acme.BookStore.AdministrationService.Application.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>
